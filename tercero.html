@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>tracking.js - face hello world</title>
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="styles/tercero.css" />
     <script src="build/tracking-min.js"></script>
     <script src="build/data/face-min.js"></script>
@@ -12,20 +15,25 @@
   </head>
 
   <body>
-    <div class="demo-frame">
-      <div class="demo-container">
-        <img id="img" src="" />
+    <div class="box-buttons">      
+      <input type="file" id="file" multiple />
+      <label for="file" class="btn-1">Subir Imagenes</label>
+      <button id="startFunc" class="tracking-btn">tracking</button>
+    </div>
+    <div class="cont">
+      <div class="demo-frame">
+        <div class="demo-container">
+          <img id="img" src="family.jpg" />
+        </div>
+      </div>
+      <div class="content-img">
+        <h3>Imagenes subidas</h3>
+        <div id="imagenes">
+          <img class="imgM active" src="family.jpg" alt="" />
+        </div>
       </div>
     </div>
-    <div class="content-img">
-      <div id="imagenes">
-        <img class="imgM active" src="family.jpg" alt="" />
-      </div>
-      <div id="cargar">
-        <input type="file" id="fileUpload" />
-      </div>
-    </div>
-    <button id="startFunc">Click</button>
+
     <script src="js/tercero.js"></script>
   </body>
 </html>

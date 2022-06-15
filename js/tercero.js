@@ -14,7 +14,7 @@ var img_main = document.querySelector("#img");
     });
   });
 });
-const inpFile = document.getElementById("fileUpload");
+const inpFile = document.getElementById("file");
 const startBot = document.getElementById("startFunc");
 inpFile.addEventListener("change", function () {
   var img = document.getElementById("img");
@@ -23,7 +23,9 @@ inpFile.addEventListener("change", function () {
     const reader = new FileReader();
     reader.addEventListener("load", function () {
       img.src = this.result;
-      cont.innerHTML += `<img class="imgM" src="${this.result}" alt="Foto usuario" />`;
+      const active = document.querySelector(".active");
+      active.classList.remove("active");
+      cont.innerHTML += `<img class="imgM active" src="${this.result}" alt="Foto usuario" />`;
       [].forEach.call(document.querySelectorAll(".rect"), function (regla) {
         regla.parentNode.removeChild(regla);
       });
