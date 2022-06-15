@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>tracking.js - first tracking</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs@latest/dist/handtrack.min.js"> </script>
+
+    <script src="build/tracking-min.js"></script>
+    <script src="build/data/face.js"></script>
+    <script src="build/data/eye.js"></script>
+    <script src="build/data/mouth.js"></script>
+
+    <script src="build/data/stats.min.js"></script>
+
+    <style>
+        video,
+        canvas {
+            margin-left: 230px;
+            margin-top: 120px;
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <video id="myVideo" width="600" height="600" preload autoplay loop muted></video>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script>
+
+        var video = document.getElementById('myVideo');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        var tracker = new tracking.ObjectTracker('face');
+        tracker.setInitialScale(4.7);
+        tracker.setStepSize(2);
+        tracker.setEdgesDensity(0.1);
+
+        tracking.track('#myVideo', tracker, { camera: true });
+
+        tracker.on('track', function (event) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            event.data.forEach(function (rect) {
+                // context.drawImage
+                context.strokeStyle = '#a64ceb';
+                context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                context.font = '11px Helvetica';
+                context.fillStyle = "#fff";
+                context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+            });
+        });
+    </script>
+
+<script>
+    const img = document.getElementById('myVideo'); 
+    const model =   handTrack.load();
+    const predictions = model.detect(img); 
+  </script>
+
+
+</body>
+
+</html>

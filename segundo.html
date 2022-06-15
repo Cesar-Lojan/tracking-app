@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aba536ae59.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/segundo.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="trackbutton"  type="button" class="btn-track" disabled><i class="fa-solid fa-video"></i><span id="button-text">Start Video</span></button>
+        <button id="nextimagebutton" style="display: none;" type="button" disabled>
+            Next Image
+        </button>
+        <div id="updatenote"> Loading ..</div>
+    </div>
+    <div class="cont">
+        <video class="videobox canvasbox" autoplay="autoplay" id="myvideo"></video>
+        <canvas id="canvas" class="border canvasbox"></canvas>
+        <div>
+            <img src="mano.jpg" class="canvasbox hidden" id="handimage" alt="">
+        </div>
+        <img class="canvasbox" id="imagen" alt="">
+
+    </div>
+
+    <script src="build/data/handtrack.min.js"> </script>
+    <script src="build/data/index.js"></script>
+    
+</body>
+
+</html>

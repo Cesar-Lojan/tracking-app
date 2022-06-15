@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.rect {
+    border: 2px solid #a64ceb;
+    left: -1000px;
+    position: absolute;
+    top: -1000px;
+}
+
+
+.active{
+    border: 2px solid #a64ceb;
+}
+#imagenes img{
+    
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
