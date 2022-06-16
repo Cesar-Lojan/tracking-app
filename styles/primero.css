@@ -1,0 +1,9 @@
+body {
+  height: 100vh;
+  position: relative;
+}
+video,
+canvas {
+  position: absolute;
+  top: 0;
+}
